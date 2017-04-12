@@ -9,14 +9,13 @@ This project contains a simple Servlet application.
 2. Create a new Liberty Profile Server. See [step 3](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/) for details.
 3. Clone this repository.
 4. Import the sample into Eclipse using *File -> Import -> Maven -> Existing Maven Projects* option.
-5. Deploy the sample into Liberty server. Right click on the *servlet* sample and select *Run As -> Run on Server* option. Find and select the Liberty profile server and press *Finish*. 
-6. Go to: [http://localhost:9080/servlet](http://localhost:9080/servlet)
-
-To stop the server, right click your Liberty server in the *Servers* view and click *Stop*.
+5. Right click on the project and go to *Properties > Project Facets* and select *Dynamic Web Module* (if not already selected).
+6. Deploy the sample into Liberty server. Right click on the *servlet* sample and select *Run As -> Run on Server* option. Find and select the Liberty profile server and press *Finish*. 
+7. Go to: [http://localhost:9080/servlet](http://localhost:9080/servlet)
 
 ## Running with Maven
 
-This project can be build with [Apache Maven](http://maven.apache.org/). The project uses [Liberty Maven Plug-in][] to automatically download and install Liberty profile runtime from the [Liberty repository](https://developer.ibm.com/wasdev/downloads/). Liberty Maven Plug-in is also used to create, configure, and run the application on the Liberty server. 
+This project can be built with [Apache Maven](http://maven.apache.org/). The project uses [Liberty Maven Plug-in][] to automatically download and install Liberty profile runtime from the [Liberty repository](https://developer.ibm.com/wasdev/downloads/). Liberty Maven Plug-in is also used to create, configure, and run the application on the Liberty server. 
 
 Use the following steps to run the application with Maven:
 
@@ -32,12 +31,6 @@ Use the following steps to run the application with Maven:
 
 Once the server is running, the application will be available under [http://localhost:9080/servlet](http://localhost:9080/servlet).
 
-To stop the server execute:
-
-    
-    $ mvn liberty:stop-server
-    
-    
 ## Deploying to Bluemix
 
 Click the button below to deploy your own copy of this application to [Bluemix](https://bluemix.net).
@@ -46,7 +39,7 @@ Click the button below to deploy your own copy of this application to [Bluemix](
 
 # Notice
 
-© Copyright IBM Corporation 2014.
+© Copyright IBM Corporation 2017.
 
 # License
 

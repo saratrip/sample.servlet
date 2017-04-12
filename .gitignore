@@ -1,7 +1,5 @@
-*/target/**
-*/.settings/*
-.metadata
-*~
-/target
-.factorypath
-.settings
+target/
+.classpath
+.project
+.settings/
+bin/
