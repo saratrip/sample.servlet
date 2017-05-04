@@ -32,7 +32,7 @@ public class LibertyServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.getWriter().append("Served at: ").append(request.getContextPath());
-        response.getWriter().append("<br/>Hello, from a Servlet!");
+        response.getWriter().append("\nHello, from a Servlet!");
     }
 
     /**
