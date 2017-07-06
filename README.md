@@ -3,6 +3,8 @@ Servlet Sample
 
 This project contains a simple Servlet application.
 
+Download [sample.servlet.war](https://jitpack.io/com/github/WASdev/sample.servlet/2.1.0/sample.servlet-2.1.0.war).
+
 ## Running in Eclipse
 
 1. Download and install [Eclipse with the WebSphere Developer Tools](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/).
