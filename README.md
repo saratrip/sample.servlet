@@ -1,4 +1,4 @@
-Servlet Sample
+Servlet Sample [![Build Status](https://travis-ci.org/WASdev/sample.servlet.svg?branch=master)](https://travis-ci.org/WASdev/sample.servlet)
 ==============
 
 This project contains a simple Servlet application.
