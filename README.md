@@ -58,7 +58,7 @@ Once the server has started, the application will be available under [http://loc
     $ gradle libertyStop
     ```  
     
-Alternatively, execute the run command:
+Alternatively, execute the run command:  
     ```
     $ gradle libertyRun --no-daemon
     ```
