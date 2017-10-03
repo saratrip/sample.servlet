@@ -17,11 +17,11 @@ Download [sample.servlet.war](https://jitpack.io/com/github/WASdev/sample.servle
 
 ## Running with Maven
 
-This project can be built with Apache Maven. The project uses Liberty Maven Plug-in to automatically download and install Liberty with Java EE7 Web Profile runtime from Maven Central. Liberty Maven Plug-in is also used to create, configure, and run the application on the Liberty server. 
+This project can be built with Apache Maven. The project uses Liberty Maven Plug-in to automatically download and install Liberty with Java EE Web Profile 7 runtime from Maven Central. Liberty Maven Plug-in is also used to create, configure, and run the application on the Liberty server. 
 
 Use the following steps to run the application with Maven:
 
-1. Execute full Maven build. This will cause Liberty Maven Plug-in to download and install Liberty profile server.
+1. Execute the full Maven build. The Liberty Maven Plug-in will download and install the Liberty server.
     ```bash
     $ mvn clean install
     ```
@@ -37,13 +37,13 @@ Please refer to the [ci.maven](http://github.com/WASDev/ci.maven) repository for
 
 ## Running with Gradle
 
-This project can also be built and run with Gradle. The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install Liberty with Java EE7 Web Profile runtime from Maven Central. The Liberty Gradle Plug-in has built in tasks that can be used to create, configure, and run the application on the Liberty server.
+This project can also be built and run with Gradle. The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install Liberty with Java EE Web Profile 7 runtime from Maven Central. The Liberty Gradle Plug-in has built-in tasks that can be used to create, configure, and run the application on the Liberty server.
   
 Use the following steps to run the application with Gradle:
 
-1. Execute `installLiberty` to download the Liberty profile server.
+1. Execute the full Gradle build. The Liberty Gradle Plug-in will download and install the Liberty server.
     ```bash
-    $ gradle clean installLiberty
+    $ gradle clean build
     ```
     
 2. To start the server with the Servlet sample execute:
@@ -56,10 +56,10 @@ Once the server has started, the application will be available under [http://loc
 3. To stop the server, execute:
     ```bash
     $ gradle libertyStop
+    ```  
+    
+Alternatively, execute the run command:
     ```
-
-Alternatively, execute the run command: (<---Should we do this?)  
-    ```bash
     $ gradle libertyRun --no-daemon
     ```
 
