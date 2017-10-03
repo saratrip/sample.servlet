@@ -5,7 +5,7 @@ This project contains a simple Servlet application.
 
 Download [sample.servlet.war](https://jitpack.io/com/github/WASdev/sample.servlet/2.1.0/sample.servlet-2.1.0.war).
 
-## Running in Eclipse
+## Running in Eclipse with Maven
 
 1. Download and install [Eclipse with the WebSphere Developer Tools](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/).
 2. Create a new Liberty Profile Server. See [step 3](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/) for details.
@@ -32,6 +32,38 @@ Use the following steps to run the application with Maven:
     ```
 
 Once the server is running, the application will be available under [http://localhost:9080/servlet](http://localhost:9080/servlet).
+
+Please refer to the [ci.maven](http://github.com/WASDev/ci.maven) repository for documentation about using the Liberty Maven Plug-in.
+
+## Running with Gradle
+
+This project can also be built and run with Gradle. The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install Liberty with Java EE7 Web Profile runtime from Maven Central. The Liberty Gradle Plug-in has built in tasks that can be used to create, configure, and run the application on the Liberty server.
+  
+Use the following steps to run the application with Gradle:
+
+1. Execute `installLiberty` to download the Liberty profile server.
+    ```bash
+    $ gradle clean installLiberty
+    ```
+    
+2. To start the server with the Servlet sample execute:
+    ```bash
+    $ gradle libertyStart
+    ```
+    
+Once the server has started, the application will be available under [http://localhost:9080/servlet](http://localhost:9080/servlet).
+
+3. To stop the server, execute:
+    ```bash
+    $ gradle libertyStop
+    ```
+
+Alternatively, execute the run command: (<---Should we do this?)  
+    ```bash
+    $ gradle libertyRun --no-daemon
+    ```
+
+Please refer to the [ci.gradle](http://github.com/WASDev/ci.gradle) repository for documentation about using the Liberty Gradle Plug-in.
 
 ## Deploying to Bluemix
 
