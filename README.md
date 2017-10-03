@@ -51,17 +51,17 @@ Use the following steps to run the application with Gradle:
     $ gradle libertyStart
     ```
     
+    Alternatively, execute the run command:
+    ```bash
+    $ gradle libertyRun --no-daemon
+    ```
+    
 Once the server has started, the application will be available under [http://localhost:9080/servlet](http://localhost:9080/servlet).
 
 3. To stop the server, execute:
     ```bash
     $ gradle libertyStop
     ```  
-    
-Alternatively, execute the run command:  
-    ```
-    $ gradle libertyRun --no-daemon
-    ```
 
 Please refer to the [ci.gradle](http://github.com/WASDev/ci.gradle) repository for documentation about using the Liberty Gradle Plug-in.
 
