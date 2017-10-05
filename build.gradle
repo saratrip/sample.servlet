@@ -84,7 +84,6 @@ task integrationTest(type: Test) {
 
 task printURL {
     doLast {
-        println project.tasks.graph
         println "The URL is: http://localhost:${testServerHttpPort}/${warContext}"
     }
 }
