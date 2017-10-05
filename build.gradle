@@ -6,8 +6,8 @@ version = '1'
 
 description = """"""
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
@@ -56,9 +56,9 @@ dependencies {
 
 liberty {
     server {
-        configFile = file("src/main/iberty/config/server.xml")
+        configFile = file("src/main/liberty/config/server.xml")
         bootstrapProperties = ['default.http.port': testServerHttpPort, 'default.https.port': testServerHttpsPort,
-                                'appLocation': '${war.archiveName}', 'appContext': warContext]
+                                'appLocation': war.archiveName, 'appContext': warContext]
         name = wlpServerName
         apps = [war]
     }
@@ -80,18 +80,16 @@ task integrationTest(type: Test) {
     exclude '**/unit/**'
 
     systemProperties = ['liberty.test.port': testServerHttpPort, 'war.context': warContext]
-    // systemProperties = ['liberty.test.port': testServerHttpPort]
 }
 
 task printURL {
     doLast {
-        println "The server is now running at http://localhost:${testServerHttpPort}/${warContext}"
+        println project.tasks.graph
+        println "The URL is: http://localhost:${testServerHttpPort}/${warContext}"
     }
 }
 
-installApps.dependsOn 'war'
-libertyStart.dependsOn 'installApps'
+clean.dependsOn 'libertyStop'
 check.dependsOn 'integrationTest'
 integrationTest.dependsOn 'libertyStart', 'testClasses'
 integrationTest.finalizedBy 'libertyStop'
-libertyStart.finalizedBy 'printURL'
