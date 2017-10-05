@@ -82,9 +82,10 @@ task integrationTest(type: Test) {
     systemProperties = ['liberty.test.port': testServerHttpPort, 'war.context': warContext]
 }
 
-task printURL {
-    doLast {
-        println "The URL is: http://localhost:${testServerHttpPort}/${warContext}"
+gradle.taskGraph.whenReady { graph ->
+    if (graph.hasTask(":libertyStart") && !graph.hasTask(":libertyStop")) {
+        // Doesn't know if libertyStart succeeds or not
+        println ("The server should be running on: http://localhost:${testServerHttpPort}/${warContext}")
     }
 }
 
