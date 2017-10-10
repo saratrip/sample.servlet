@@ -33,7 +33,7 @@ Use the following steps to run the application with Maven:
 
 Once the server is running, the application will be available under [http://localhost:9080/servlet][].
 
-Please refer to the [Liberty Maven Plug-in](http://github.com/WASDev/ci.maven) repository for documentation about using the Liberty Maven Plug-in.
+Please refer to the [Liberty Maven Plug-in][] repository for documentation about using the Liberty Maven Plug-in.
 
 ## Running with Gradle
 
@@ -56,7 +56,7 @@ Use the following steps to run the application with the Gradle wrapper (Windows 
     $ ./gradlew libertyRun --no-daemon
     ```
     
-Once the server has started, the application will be available under [http://localhost:9080/servlet](http://localhost:9080/servlet).
+Once the server has started, the application will be available under [http://localhost:9080/servlet][].
 
 3. To stop the server, execute:
     ```bash
@@ -65,7 +65,7 @@ Once the server has started, the application will be available under [http://loc
     
 Note, if Gradle is properly installed, Gradle commands can be executed directly using `gradle` and wouldn't require `gradlew`.
 
-Please refer to the [Liberty Gradle Plug-in] repository for documentation about using the Liberty Gradle Plug-in.
+Please refer to the [Liberty Gradle Plug-in][] repository for documentation about using the Liberty Gradle Plug-in.
 
 ## Deploying to Bluemix
 
