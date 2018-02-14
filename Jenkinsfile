@@ -18,7 +18,7 @@ podTemplate(label: 'mypod',
                 NAMESPACE=`cat /var/run/configs/registry-config/namespace`
                 REGISTRY=`cat /var/run/configs/registry-config/registry`
 
-                docker build -t \${REGISTRY}/\${NAMESPACE}/bluecompute-ce-web:${env.BUILD_NUMBER} .
+                docker build -t \${REGISTRY}/\${NAMESPACE}/simpleapp:${env.BUILD_NUMBER} .
                 """
             }
             stage('Push Docker Image to Registry ICP') {
@@ -33,7 +33,7 @@ podTemplate(label: 'mypod',
                 docker login -u=\${DOCKER_USER} -p=\${DOCKER_PASSWORD} \${REGISTRY}
                 set -x
 
-                docker push \${REGISTRY}/\${NAMESPACE}/bluecompute-ce-web:${env.BUILD_NUMBER}
+                docker push \${REGISTRY}/\${NAMESPACE}/simpleapp:${env.BUILD_NUMBER}
                 """
             }
         }
@@ -44,7 +44,7 @@ podTemplate(label: 'mypod',
                 set +e
                 NAMESPACE=`cat /var/run/configs/registry-config/namespace`
                 REGISTRY=`cat /var/run/configs/registry-config/registry`
-                DEPLOYMENT=`kubectl get deployments | grep bluecompute | grep web | awk '{print \$1}'`
+                DEPLOYMENT=`kubectl get deployments | simpleapp | awk '{print \$1}'`
 
                 kubectl get deployments \${DEPLOYMENT}
 
@@ -56,7 +56,7 @@ podTemplate(label: 'mypod',
 
                 # Update Deployment
                 
-                 kubectl set image deployment/\${DEPLOYMENT} web=\${REGISTRY}/\${NAMESPACE}/bluecompute-ce-web:${env.BUILD_NUMBER}
+                 kubectl set image deployment/\${DEPLOYMENT} web=\${REGISTRY}/\${NAMESPACE}/simpleapp:${env.BUILD_NUMBER}
  
                 kubectl rollout status deployment/\${DEPLOYMENT}
                 """
