@@ -45,7 +45,7 @@ podTemplate(label: 'mypod',
                 set +e
                 NAMESPACE=`cat /var/run/configs/registry-config/namespace`
                 REGISTRY=`cat /var/run/configs/registry-config/registry`
-                DEPLOYMENT=`kubectl get deployments -l app=simpleapp-service -o name
+                DEPLOYMENT=`kubectl get deployments -l app=simpleapp-service -o name'
                 kubectl get \${DEPLOYMENT}
 
                 if [ \${?} -ne "0" ]; then
