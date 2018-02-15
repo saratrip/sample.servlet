@@ -53,8 +53,8 @@ podTemplate(label: 'mypod',
                 
                    
                  kubectl set image deployment/simpleapp:${env.BUILD_NUMBER}
-                  
-                kubectl rollout status deployment/simpleapp-service
+               
+               kubectl rollout status deployment/\${DEPLOYMENT}
                 """
             }
         }
