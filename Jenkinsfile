@@ -52,7 +52,7 @@ podTemplate(label: 'mypod',
                 # Update Deployment
                 
                    
-                 kubectl set image deployment\${DEPLOYMENT} \${REGISTRY}/\${NAMESPACE}/simpleapp:${env.BUILD_NUMBER}
+                 kubectl set image deployment \${DEPLOYMENT} \${REGISTRY}/\${NAMESPACE}/simpleapp:${env.BUILD_NUMBER}
                   
                 kubectl rollout status deployment/\${DEPLOYMENT}
                 """
