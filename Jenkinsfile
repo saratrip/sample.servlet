@@ -52,9 +52,9 @@ podTemplate(label: 'mypod',
                 # Update Deployment
                 
                    
-                 kubectl set image deployment/simpleapp
+                 kubectl set image deployment/simpleapp-service
                   
-                kubectl rollout status deployment/simpleapp
+                kubectl rollout status deployment/simpleapp-service
                 """
             }
         }
