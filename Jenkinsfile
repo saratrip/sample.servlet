@@ -51,7 +51,7 @@ podTemplate(label: 'mypod',
                 fi
                 # Update Deployment
                 
-                   kubectl set image deployment/simpleapp-service
+                   kubectl set image deployment/simpleapp-service:${env.BUILD_NUMBER}
                   
                 kubectl rollout status deployment/\${DEPLOYMENT}
                 """
